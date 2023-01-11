@@ -1,0 +1,18 @@
+tasks:
+  - name: pod_setup
+    before: |
+      export PATH=/workspace/julia-1.8.4/bin:$PATH
+      export JULIA_DEPOT_PATH=/workspace/.julia
+      export JULIA_PROJECT=/workspace/msca-optima/env
+      pip install matplotlib
+    init: |
+      wget -P .. https://julialang-s3.julialang.org/bin/linux/x64/1.8/julia-1.8.4-linux-x86_64.tar.gz
+      tar zxvf ../julia-1.8.4-linux-x86_64.tar.gz -C ..
+      rm -rf ../*.tar.gz
+      mkdir /workspace/.julia
+      julia -e 'using Pkg; Pkg.instantiate()'
+    command: clear && julia
+vscode:
+  extensions:
+    - ms-toolsai.jupyter
+    - julialang.language-julia
