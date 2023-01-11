@@ -3,6 +3,6 @@
     {
         "PATH": "/workspace/julia-1.8.4/bin:${containerEnv:PATH}",
         "JULIA_DEPOT_PATH": "/workspace/.julia",
-        "JULIA_PROJECT": "/workspace/julia-dev-pod/env"
+        "JULIA_PROJECT": "/workspace/msca-optima/env"
     }
 }
